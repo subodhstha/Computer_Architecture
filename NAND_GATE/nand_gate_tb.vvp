@@ -1,0 +1,41 @@
+#! /c/iverilog/bin/vvp
+:ivl_version "0.9.7 " "(v0_9_7)";
+:vpi_time_precision + 0;
+:vpi_module "system";
+:vpi_module "v2005_math";
+:vpi_module "va_math";
+S_011E54A0 .scope module, "nand_gate_tb" "nand_gate_tb" 2 2;
+ .timescale 0 0;
+v011EEEC8_0 .var "a", 0 0;
+v011EEF20_0 .var "b", 0 0;
+v011EEF78_0 .net "c", 0 0, L_011E5528; 1 drivers
+S_011E1C80 .scope module, "nand1" "nand_gate" 2 5, 3 1, S_011E54A0;
+ .timescale 0 0;
+L_011E5528 .functor NAND 1, v011EEEC8_0, v011EEF20_0, C4<1>, C4<1>;
+v011E1D08_0 .net "a", 0 0, v011EEEC8_0; 1 drivers
+v011E1D60_0 .net "b", 0 0, v011EEF20_0; 1 drivers
+v011EEE70_0 .alias "c", 0 0, v011EEF78_0;
+    .scope S_011E54A0;
+T_0 ;
+    %vpi_call 2 7 "$dumpfile", "nand_gate.vcd";
+    %vpi_call 2 8 "$dumpvars", 1'sb0, S_011E54A0;
+    %set/v v011EEEC8_0, 0, 1;
+    %set/v v011EEF20_0, 0, 1;
+    %delay 10, 0;
+    %set/v v011EEEC8_0, 0, 1;
+    %set/v v011EEF20_0, 1, 1;
+    %delay 10, 0;
+    %set/v v011EEEC8_0, 1, 1;
+    %set/v v011EEF20_0, 0, 1;
+    %delay 10, 0;
+    %set/v v011EEEC8_0, 1, 1;
+    %set/v v011EEF20_0, 1, 1;
+    %vpi_call 2 20 "$finish";
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "nand_gate_tb.v";
+    "./nand_gate.v";

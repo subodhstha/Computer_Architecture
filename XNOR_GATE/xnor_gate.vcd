@@ -1,5 +1,5 @@
 $date
-	Wed Nov 23 19:51:52 2022
+	Mon Jan 23 11:10:48 2023
 $end
 $version
 	Icarus Verilog
@@ -7,11 +7,11 @@ $end
 $timescale
 	1s
 $end
-$scope module xor_gate_tb $end
+$scope module xnor_gate_tb $end
 $var wire 1 ! c $end
 $var reg 1 " a $end
 $var reg 1 # b $end
-$scope module xor1 $end
+$scope module xnor1 $end
 $var wire 1 $ a $end
 $var wire 1 % b $end
 $var wire 1 ! c $end
@@ -24,10 +24,10 @@ $dumpvars
 0$
 0#
 0"
-0!
+1!
 $end
 #10
-1!
+0!
 1#
 1%
 #20
@@ -36,6 +36,6 @@ $end
 1"
 1$
 #30
-0!
+1!
 1#
 1%
